@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		04048312201345A900D58DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048311201345A900D58DB0 /* AppDelegate.swift */; };
-		04048314201345A900D58DB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04048313201345A900D58DB0 /* ViewController.swift */; };
 		04048317201345A900D58DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04048315201345A900D58DB0 /* Main.storyboard */; };
 		04048319201345A900D58DB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04048318201345A900D58DB0 /* Assets.xcassets */; };
-		0404831C201345A900D58DB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404831A201345A900D58DB0 /* LaunchScreen.storyboard */; };
+		040ED59F2073B6A500C583A2 /* routerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040ED59E2073B6A500C583A2 /* routerData.swift */; };
+		048C44D9207E061F0009B756 /* routerControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C44D8207E061F0009B756 /* routerControlViewController.swift */; };
+		048D0E232080A99900FC0460 /* routerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D0E222080A99800FC0460 /* routerView.swift */; };
+		04D12B89207F594D00E38082 /* deviceListTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D12B88207F594D00E38082 /* deviceListTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0404830E201345A900D58DB0 /* RouteControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04048311201345A900D58DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04048313201345A900D58DB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04048316201345A900D58DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04048318201345A900D58DB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0404831B201345A900D58DB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0404831D201345AA00D58DB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		040ED59E2073B6A500C583A2 /* routerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routerData.swift; sourceTree = "<group>"; };
+		048C44D8207E061F0009B756 /* routerControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = routerControlViewController.swift; sourceTree = "<group>"; };
+		048D0E222080A99800FC0460 /* routerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = routerView.swift; sourceTree = "<group>"; };
+		04D12B88207F594D00E38082 /* deviceListTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceListTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 			children = (
 				04048310201345A900D58DB0 /* RouteControl */,
 				0404830F201345A900D58DB0 /* Products */,
+				04FAC2C0204999D500C91B9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +59,23 @@
 		04048310201345A900D58DB0 /* RouteControl */ = {
 			isa = PBXGroup;
 			children = (
+				048D0E222080A99800FC0460 /* routerView.swift */,
+				048C44D8207E061F0009B756 /* routerControlViewController.swift */,
 				04048311201345A900D58DB0 /* AppDelegate.swift */,
-				04048313201345A900D58DB0 /* ViewController.swift */,
+				040ED59E2073B6A500C583A2 /* routerData.swift */,
 				04048315201345A900D58DB0 /* Main.storyboard */,
 				04048318201345A900D58DB0 /* Assets.xcassets */,
-				0404831A201345A900D58DB0 /* LaunchScreen.storyboard */,
 				0404831D201345AA00D58DB0 /* Info.plist */,
+				04D12B88207F594D00E38082 /* deviceListTable.swift */,
 			);
 			path = RouteControl;
+			sourceTree = "<group>";
+		};
+		04FAC2C0204999D500C91B9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,12 +105,20 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Mac;
 				TargetAttributes = {
 					0404830D201345A900D58DB0 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -123,7 +145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0404831C201345A900D58DB0 /* LaunchScreen.storyboard in Resources */,
 				04048319201345A900D58DB0 /* Assets.xcassets in Resources */,
 				04048317201345A900D58DB0 /* Main.storyboard in Resources */,
 			);
@@ -136,8 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04048314201345A900D58DB0 /* ViewController.swift in Sources */,
+				04D12B89207F594D00E38082 /* deviceListTable.swift in Sources */,
 				04048312201345A900D58DB0 /* AppDelegate.swift in Sources */,
+				048D0E232080A99900FC0460 /* routerView.swift in Sources */,
+				040ED59F2073B6A500C583A2 /* routerData.swift in Sources */,
+				048C44D9207E061F0009B756 /* routerControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,14 +174,6 @@
 				04048316201345A900D58DB0 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0404831A201345A900D58DB0 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0404831B201345A900D58DB0 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -177,6 +193,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -184,6 +201,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -211,7 +229,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -234,6 +252,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -241,6 +260,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -262,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -274,13 +294,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9EG298F8CJ;
 				INFOPLIST_FILE = RouteControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = whg.RouteControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -288,13 +311,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9EG298F8CJ;
 				INFOPLIST_FILE = RouteControl/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = whg.RouteControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
