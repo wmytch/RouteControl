@@ -13,17 +13,13 @@ class RouterControlViewController: UIViewController{
     let defaultMacList = UserDefaults.standard
     let routerData=RouterData()
    
-    @IBOutlet var macFilterNotice: UILabel!
+    @IBOutlet weak var macFilterNotice: UILabel!
+    @IBAction func enableMacFilter(_ sender: UIButton) {
+        ruleSwitch(by:"allow")
+    }
     
-    @IBAction func macFilterSwitch(_ sender: UISwitch) {
-        if sender.isOn == true {
-            self.macFilterNotice.text="MAC过滤已启用"
-            ruleSwitch(by:"allow")
-        }
-        else {
-            self.macFilterNotice.text="MAC过滤已禁用"
-            ruleSwitch(by:"disabled")
-        }
+    @IBAction func disableMacFilter(_ sender: UIButton) {
+         ruleSwitch(by:"disabled")
     }
     
     func ruleSwitch(by filter_mode:String){

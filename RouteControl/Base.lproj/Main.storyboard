@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUW-YR-VTr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUW-YR-VTr">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="top" spacing="34" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B1p-Bn-wSS" propertyAccessControl="none">
-                                <rect key="frame" x="16" y="69" width="172.5" height="131"/>
+                                <rect key="frame" x="16" y="69" width="172.5" height="183"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="yfV-Jc-LpF">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="131"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="183"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmI-fJ-lh5">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="33"/>
@@ -42,32 +42,35 @@
                                                     <segue destination="02a-Fy-54T" kind="showDetail" id="PWw-Ly-OqH"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0PS-rq-kZs">
-                                                <rect key="frame" x="0.0" y="100" width="172.5" height="31"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IMt-6a-dFl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="31"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAC过滤已启用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-64-DAe">
-                                                                <rect key="frame" x="0.0" y="5.5" width="123.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z9E-xZ-Kwt">
-                                                                <rect key="frame" x="123.5" y="0.0" width="51" height="31"/>
-                                                                <connections>
-                                                                    <action selector="macFilterSwitch:" destination="aUW-YR-VTr" eventType="valueChanged" id="Lqp-30-S4u"/>
-                                                                </connections>
-                                                            </switch>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elV-Mk-ecY">
+                                                <rect key="frame" x="0.0" y="100" width="113" height="33"/>
+                                                <fontDescription key="fontDescription" name="STBaoliSC-Regular" family="Baoli SC" pointSize="18"/>
+                                                <size key="titleShadowOffset" width="2" height="2"/>
+                                                <state key="normal" title="启用MAC过滤"/>
+                                                <connections>
+                                                    <action selector="enableMacFilter:" destination="aUW-YR-VTr" eventType="touchUpInside" id="s6e-am-e0C"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFh-Hg-9KP">
+                                                <rect key="frame" x="0.0" y="150" width="113" height="33"/>
+                                                <fontDescription key="fontDescription" name="STBaoliSC-Regular" family="Baoli SC" pointSize="18"/>
+                                                <size key="titleShadowOffset" width="2" height="2"/>
+                                                <state key="normal" title="取消MAC过滤"/>
+                                                <connections>
+                                                    <action selector="disableMacFilter:" destination="aUW-YR-VTr" eventType="touchUpInside" id="979-Jb-Eom"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="状态：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yj-yB-XZB">
+                                <rect key="frame" x="16" y="260" width="207" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -78,7 +81,7 @@
                         <viewLayoutGuide key="safeArea" id="Gl6-al-7FH"/>
                     </view>
                     <connections>
-                        <outlet property="macFilterNotice" destination="x9D-64-DAe" id="PLB-BJ-4v4"/>
+                        <outlet property="macFilterNotice" destination="7yj-yB-XZB" id="PSK-Rs-G5O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQf-Dt-Fte" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,11 +197,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="用户列表" prompt="已连接无线设备" id="poc-JH-9ee">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="refresh" id="FLM-ao-2cL">
-                            <connections>
-                                <action selector="freshUserList:" destination="cS0-i1-wUE" id="Vhv-0R-hwO"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="evK-qf-mdu">
                             <connections>
                                 <action selector="doneButtonTapped:" destination="cS0-i1-wUE" id="edQ-8X-QUv"/>

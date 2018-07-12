@@ -38,6 +38,9 @@ class RouterViewController: UITableViewController {
                 self.macItems.append((responseContent as NSString).substring(with: checkingRes.range))
 //              print(self.macItems)
             }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }).resume()
     }
     
@@ -46,9 +49,6 @@ class RouterViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func freshUserList(_ sender: UIBarButtonItem) {
-        self.tableView.reloadData()
-    }
     func numberOfSectionsInTableView(tableview :UITableView!)->Int{
         return 1
     }
