@@ -33,7 +33,7 @@ class RouterViewController: UITableViewController {
                 let res=NSString(data: data!, encoding: String.Encoding.ascii.rawValue)
             
                 let responseContent=String(describing: res)
-            self.macItemsFilterList = self.routerData.macRegex.matches(in: responseContent, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, responseContent.count))
+            self.macItemsFilterList = (self.routerData.macRegex?.matches(in: responseContent, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, responseContent.count)))!
             for checkingRes in self.macItemsFilterList {
                 self.macItems.append((responseContent as NSString).substring(with: checkingRes.range))
 //              print(self.macItems)
